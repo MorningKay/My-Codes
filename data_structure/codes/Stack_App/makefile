@@ -1,0 +1,39 @@
+CC = gcc
+CFLAGS = -Wall -g -O2
+
+COMMON_SRCS1 = SeqStack_int.c
+COMMON_OBJS1 = $(COMMON_SRCS1:.c=.o)
+
+COMMON_SRCS2 = SeqStack_char.c
+COMMON_OBJS2 = $(COMMON_SRCS2:.c=.o)
+
+PROJECT1_SRCS = DecConvert.c
+PROJECT1_OBJS = $(PROJECT1_SRCS:.c=.o)
+PROJECT1_TARGET = DecConvert
+
+PROJECT2_SRCS = BracketsMatch.c
+PROJECT2_OBJS = $(PROJECT2_SRCS:.c=.o)
+PROJECT2_TARGET = BracketsMatch
+
+PROJECT3_SRCS = CheckTerminal.c
+PROJECT3_OBJS = $(PROJECT3_SRCS:.c=.o)
+PROJECT3_TARGET = CheckTerminal
+
+all: $(PROJECT1_TARGET) $(PROJECT2_TARGET) $(PROJECT3_TARGET)
+
+$(PROJECT1_TARGET):$(COMMON_OBJS1) $(PROJECT1_OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(PROJECT2_TARGET):$(COMMON_OBJS2) $(PROJECT2_OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(PROJECT3_TARGET):$(COMMON_OBJS2) $(PROJECT3_OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(PROJECT1_TARGET) $(PROJECT2_TARGET) $(PROJECT3_TARGET) *.o
+
+.PHONY: all clean
