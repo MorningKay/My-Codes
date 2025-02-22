@@ -1,0 +1,29 @@
+sort1 uses: Bubble sort
+reversed5000:0m0.070s
+reversed10000:0m0.236s
+reversed50000:0m9.560s
+random5000:0m0.109s
+random10000:0m0.222s
+random50000:0m9.261s
+
+How do you know?: This one sorted the reversed50000 is the lowest.
+
+sort2 uses: Merge sort
+reversed5000:0m0.028s
+reversed10000:0m0.067s
+reversed50000:0m3.799s
+random5000:0m0.072s
+random10000:0m0.065s
+random50000:0m4.091s
+
+How do you know?: This one sorted both random and reversed are the fastest.
+
+sort3 uses: Selection sort
+reversed5000:0m0.079s
+reversed10000:0m0.403s
+reversed50000:0m6.056s
+random5000:0m0.050s
+random10000:0m0.155s
+random50000:0m6.088s
+
+How do you know?: This time is faster than sort1 a little.
